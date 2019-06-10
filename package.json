@@ -1,0 +1,50 @@
+{
+  "name": "vue-toggly",
+  "version": "0.1.0",
+  "description": "Renderless tabs, accordions, collapsible panels, toggableElements etc. Your choice.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:renatodeleao/vue-toggly.git"
+  },
+  "author": "Renato de Leão <renatodeleao@gmail.com>",
+  "license": "MIT",
+  "main": "dist/vue-toggly.umd.js",
+  "module": "dist/vue-toggly.esm.js",
+  "jsdelivr": "dist/vue-toggly.umd.min.js",
+  "unpkg": "dist/vue-toggly.umd.min.js",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.1",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "autoprefixer": "^9.4.6",
+    "cssnano": "^4.1.8",
+    "node-sass": "^4.11.0",
+    "postcss": "^7.0.14",
+    "postcss-banner": "^3.0.1",
+    "rollup": "^1.0.0",
+    "rollup-plugin-babel": "^4.2.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-sass": "^1.1.0",
+    "rollup-plugin-terser": "^4.0.2",
+    "rollup-plugin-vue": "^4.6.1",
+    "vue-template-compiler": "2.6.6",
+    "vuepress": "^0.14.8"
+  },
+  "scripts": {
+    "build": "rm -rf dist/** && rollup -c",
+    "dev": "rm -rf dist/** && rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "chmod +x ./docs-deploy.sh && ./docs-deploy.sh $npm_package_repository_url"
+  },
+  "files": [
+    "dist/*.js",
+    "dist/*.css",
+    "dist/*.map",
+    "src"
+  ]
+}
